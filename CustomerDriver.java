@@ -52,7 +52,11 @@ public class CustomerDriver extends Driver {
                     if (customer.getKeranjang().getBarang().isEmpty()) {
                         System.out.println("Keranjang kosong.");
                     } else {
-                        System.out.println("Pilih metode pembayaran: 1. QRIS, 2. Bank, 3. COD");
+                        System.out.println("Pilih metode pembayaran: ");
+                        System.out.println("1. QRIS");
+                        System.out.println("2. Bank");
+                        System.out.println("3. COD");
+                        System.out.print("Pilihan Anda: ");
                         int metode = sc.nextInt();
                         Pembayaran pembayaran;
                         switch (metode) {
@@ -69,11 +73,14 @@ public class CustomerDriver extends Driver {
                                 System.out.println("Pilihan tidak valid.");
                                 continue;
                         }
+                        System.out.println("Pembayaran melalui " + pembayaran + " diterima.");
+                        
                         Transaksi transaksi = new Transaksi(customer, customer.getKeranjang().getBarang());
                         Invoice invoice = new Invoice(transaksi, pembayaran);
                         customer.getInvoiceSelesai().add(invoice);
                         adminDriver.approveTransaksi(transaksi);
                         customer.getKeranjang().clear();
+                        System.out.println("Pembayaran melalui " + pembayaran + " diterima.");
                         System.out.println("Checkout berhasil.");
                     }
                     break;
