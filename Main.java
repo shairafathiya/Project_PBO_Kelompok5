@@ -13,6 +13,7 @@ public class Main {
         listBarang.addBarang(new Barang(listBarang.generateId(), "Earphone", 350000));
         listBarang.addBarang(new Barang(listBarang.generateId(), "USB", 140000));
 
+        // Membuat objek Customer dan CustomerDriver
         Customer customer = new Customer("C1", "customer", "customer123");
         CustomerDriver customerDriver = new CustomerDriver(customer, listBarang, adminDriver);
 
@@ -51,13 +52,14 @@ public class Main {
                 System.out.print("Password: ");
                 String password = scanner.nextLine();
 
+                // Memeriksa apakah username dan password cocok
                 if (username.equals(customer.getUsername()) && password.equals(customer.getPassword())) {
                     customerDriver.handleMenu();
                 } else {
                     System.out.println("Username atau password salah.");
                 }
             } else if (pilihan == 3) {
-                // Keluar dari aplikasi
+                // Keluar dari program
                 System.out.println("Terima kasih! Program akan keluar.");
                 break;
             } else {
