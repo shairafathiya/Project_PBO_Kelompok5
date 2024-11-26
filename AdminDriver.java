@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class AdminDriver extends Driver {
     private ListBarang listBarang;
     private ArrayList<Transaksi> listTransaksi;
+    private static final String invoice = "Invoice.txt";
 
     public AdminDriver(Admin admin, ListBarang listBarang) {
         super(admin);
