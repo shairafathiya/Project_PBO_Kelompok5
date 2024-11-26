@@ -53,14 +53,23 @@ public class AdminDriver extends Driver {
                     System.out.println(listBarang);
                     break;
                 case 5:
-                    if (listTransaksi.isEmpty()) {
-                        System.out.println("Belum ada transaksi.");
-                    } else {
-                        for (Transaksi transaksi : listTransaksi) {
-                            System.out.println(transaksi);
-                        }
+                     try (BufferedReader baca = new BufferedReader(new FileReader(invoice))) {
+                    String line;
+                    boolean isEmpty = true;
+            
+                    while ((line = baca.readLine()) != null) {
+                        System.out.println(line);
+                        isEmpty = false;
                     }
-                    break;
+            
+                    if (isEmpty) {
+                        System.out.println("Belum ada transaksi.");
+                    }
+                } catch (Exception e) {
+                    System.out.println("An error occurred: " + e.getMessage());
+                }
+                break;
+            
                 case 6:
                     System.out.println("Logout...");
                     return;
