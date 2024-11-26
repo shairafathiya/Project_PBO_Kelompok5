@@ -79,7 +79,7 @@ public class AdminDriver extends Driver {
                         System.out.println("Belum ada transaksi.");
                     }
                 } catch (Exception e) {
-                    System.out.println("Belum ada transaksi (File tidak ditemukan) " + e.getMessage());
+                    System.out.println("Belum ada transaksi (File tidak ditemukan). " + e.getMessage());
                 }
                 break;
             
