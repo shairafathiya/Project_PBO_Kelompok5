@@ -47,4 +47,7 @@ public class ListBarang {
         }
         return builder.toString();
     }
+    Iterable<Barang> getBarangList() {
+    return  barangList;
+    }
 }
