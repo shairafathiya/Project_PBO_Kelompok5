@@ -51,7 +51,17 @@ public class AdminDriver extends Driver {
                     break;
                 case 4:
                     System.out.println(listBarang);
+                    System.out.println("Daftar Barang:");
+                    System.out.println("+----------+----------------------+------------+----------+");
+                    System.out.printf("| %-8s | %-20s | %-20s |\n", "ID", "Nama Barang", "Harga Barang");
+                    System.out.println("+----------+----------------------+------------+----------+");
+                    for (Barang barang : listBarang.getBarangList()) { // Pastikan ada metode getBarangList() di ListBarang
+                    System.out.printf("| %-8s | %-20s | %-20.2f |\n",
+                    barang.getId(), barang.getNama(), barang.getHarga());
+                }
+                    System.out.println("+----------+----------------------+------------+----------+");
                     break;
+                    
                 case 5:
                      try (BufferedReader baca = new BufferedReader(new FileReader(invoice))) {
                     String line;
