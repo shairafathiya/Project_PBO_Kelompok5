@@ -46,7 +46,7 @@ public class Main {
                 }
             } else if (pilihan == 2) {
                 // Login sebagai Customer
-                System.out.println("=== Login sebagai Customer ===");
+                System.out.println("~~~ Login sebagai Customer ~~~");
                 System.out.print("Username: ");
                 String username = scanner.nextLine();
                 System.out.print("Password: ");
