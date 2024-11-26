@@ -52,7 +52,7 @@ public class CustomerDriver extends Driver {
                     if (customer.getKeranjang().getBarang().isEmpty()) {
                         System.out.println("Keranjang kosong.");
                     } else {
-                        System.out.println("Pilih metode pembayaran: 1. GRIS, 2. Bank, 3. COD");
+                        System.out.println("Pilih metode pembayaran: 1. QRIS, 2. Bank, 3. COD");
                         int metode = sc.nextInt();
                         Pembayaran pembayaran;
                         switch (metode) {
