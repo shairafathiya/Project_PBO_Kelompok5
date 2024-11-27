@@ -5,7 +5,7 @@ public class Admin extends Akun {
 
     @Override
     public void menu() {
-        System.out.println("Admin Menu:");
+        System.out.println("\nMenu Admin:");
         System.out.println("1. Tambah Barang");
         System.out.println("2. Hapus Barang");
         System.out.println("3. Edit Barang");
