@@ -1,15 +1,18 @@
 import java.util.Scanner;
 
 public class CustomerDriver extends Driver {
+    // Mengelola interaksi customer dengan barang dan admin
     private ListBarang listBarang;
     private AdminDriver adminDriver;
 
+    // Menginisialisasi customer, daftar barang, dan admin
     public CustomerDriver(Customer customer, ListBarang listBarang, AdminDriver adminDriver) {
         super(customer);
         this.listBarang = listBarang;
         this.adminDriver = adminDriver;
     }
 
+    // Menu utama customer
     @Override
     public void handleMenu() {
         Scanner sc = new Scanner(System.in);
@@ -21,8 +24,10 @@ public class CustomerDriver extends Driver {
             int choice = sc.nextInt();
             sc.nextLine(); // Consume newline
 
+            // Switch case untuk menangani pilihan menu
             switch (choice) {
                 case 1:
+                    // Menampilkan daftar barang
                     System.out.println(listBarang);
                     System.out.println("Daftar Barang:");
                     System.out.println("+----------+----------------------+------------+----------+");
@@ -35,6 +40,7 @@ public class CustomerDriver extends Driver {
                     System.out.println("+----------+----------------------+------------+----------+");
                     break;
                 case 2:
+                    // Menambahkan barang ke keranjang customer
                     System.out.print("ID Barang: ");
                     String idBarang = sc.nextLine();
                     Barang barang = listBarang.getBarang(idBarang);
@@ -46,6 +52,7 @@ public class CustomerDriver extends Driver {
                     }
                     break;
                 case 3:
+                    // Menampilkan isi keranjang customer
                     System.out.println("Keranjang:");
                     if (customer.getKeranjang().getBarang().isEmpty()) {
                         System.out.println("Keranjang kosong.");
@@ -61,6 +68,7 @@ public class CustomerDriver extends Driver {
                     }
                     break;
                 case 4:
+                    // Proses check out dan pembayaran
                     if (customer.getKeranjang().getBarang().isEmpty()) {
                         System.out.println("Keranjang kosong.");
                     } else {
@@ -86,7 +94,8 @@ public class CustomerDriver extends Driver {
                                 continue;
                         }
                         System.out.println("Pembayaran melalui " + pembayaran + " diterima.");
-                        
+
+                        // Membuat transaksi dan invoice setelah pembayaran diterima
                         Transaksi transaksi = new Transaksi(customer, customer.getKeranjang().getBarang());
                         Invoice invoice = new Invoice(transaksi, pembayaran);
                         customer.getInvoiceSelesai().add(invoice);
@@ -97,6 +106,7 @@ public class CustomerDriver extends Driver {
                     }
                     break;
                 case 5:
+                    // Menampilkan riwayat transaksi (invoice) customer
                     for (Invoice invoice : customer.getInvoiceSelesai()) {
                         System.out.println(invoice);
                     }
