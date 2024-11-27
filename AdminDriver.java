@@ -102,6 +102,7 @@ public class AdminDriver extends Driver {
         }
     }
 
+    // Menyimpan transaksi yang disetujui ke listTransaksi
     public void approveTransaksi(Transaksi transaksi) {
         listTransaksi.add(transaksi);
         System.out.println("Transaksi diterima.");
