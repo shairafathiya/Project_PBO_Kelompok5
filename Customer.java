@@ -20,7 +20,7 @@ public class Customer extends Akun {
 
     @Override
     public void menu() {
-        System.out.println("Customer Menu:");
+        System.out.println("\nMenu Customer:");
         System.out.println("1. Lihat Barang");
         System.out.println("2. Tambah ke Keranjang");
         System.out.println("3. Lihat Keranjang");
