@@ -1,8 +1,13 @@
+// Kelas Admin adalah subclass dari kelas Akun.
+// Kelas ini merepresentasikan akun dengan peran sebagai Admin.
 public class Admin extends Akun {
+    // Konstruktor Admin yang memanggil konstruktor superclass (Akun)
     public Admin(String id, String username, String password) {
         super(id, username, password);
     }
 
+    // Implementasi method abstract menu() dari kelas Akun.
+    // Method ini digunakan untuk menampilkan daftar menu yang hanya tersedia untuk Admin.
     @Override
     public void menu() {
         System.out.println("\nMenu Admin:");
