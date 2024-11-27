@@ -112,6 +112,7 @@ public class CustomerDriver extends Driver {
                     }
                     break;
                 case 6:
+                    // Logout dari sistem
                     System.out.println("Logout...");
                     return;
                 default:
