@@ -46,7 +46,19 @@ public class CustomerDriver extends Driver {
                     }
                     break;
                 case 3:
-                    System.out.println(customer.getKeranjang());
+                    System.out.println("Keranjang:");
+                    if (customer.getKeranjang().getBarang().isEmpty()) {
+                        System.out.println("Keranjang kosong.");
+                    } else {
+                        System.out.println("+----------+----------------------+------------+----------+");
+                        System.out.printf("| %-8s | %-20s | %-20s |\n", "ID", "Nama Barang", "Harga Barang" );
+                        System.out.println("+----------+----------------------+------------+----------+");
+                        for (Barang item : customer.getKeranjang().getBarang()) { // Ganti nama variabel
+                            System.out.printf("| %-8s | %-20s | %-20.2f |\n",
+                                    item.getId(), item.getNama(), item.getHarga());
+                        }
+                        System.out.println("+----------+----------------------+------------+----------+");
+                    }
                     break;
                 case 4:
                     if (customer.getKeranjang().getBarang().isEmpty()) {
