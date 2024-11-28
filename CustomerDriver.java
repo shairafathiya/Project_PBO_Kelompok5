@@ -101,7 +101,6 @@ public class CustomerDriver extends Driver {
                         customer.getInvoiceSelesai().add(invoice);
                         adminDriver.approveTransaksi(transaksi);
                         customer.getKeranjang().clear();
-                        System.out.println("Pembayaran melalui " + pembayaran + " diterima.");
                         System.out.println("Checkout berhasil.");
                     }
                     break;
